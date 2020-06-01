@@ -24,9 +24,9 @@ The workflow is triggered by PR.
 
 ### `time`
 
-The time of the run (just a trial).
+The time of the run.
 
-### `another_output`
+### `output-file-name`
 
 Output file name. 
 
