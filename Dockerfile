@@ -6,7 +6,7 @@ FROM gitlab-registry.cern.ch/clange/cmssw-docker/cmssw_4_2_8:latest
 # Copies your code file from your action repository to the filesystem path `/` of the container
 COPY entrypoint.sh /entrypoint.sh
 USER root
-RUN /bin/bash -c 'pwd; ls -la; cd /home/cmsusr; ls -la; chmod +x /entrypoint.sh; ls -la'
+RUN /bin/bash -c 'pwd; ls -la; cd /github/workspace; ls -la; chmod +x /entrypoint.sh; ls -la'
 
 # Executes `entrypoint.sh` when the Docker container starts up 
 ENTRYPOINT ["/entrypoint.sh"]
