@@ -8,7 +8,7 @@ jobs:
   #  if: github.actor == github.event.repository.owner.login
     name: My test job
     steps:
-      # To use this repository's private action, you must check out the repository, v2 is part of the action name
+      # To use this repository's private action, you  must check out the repository, v2 is part of the action name
       - name: Checkout
         uses: actions/checkout@v2
       - name: Set env
