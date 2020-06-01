@@ -8,7 +8,7 @@ jobs:
   #  if: github.actor == github.event.repository.owner.login
     name: My test job
     steps:
-      # To use this repository's private action, you must check out the repository, v2 is part of the action name
+      # To use this repository's private action, you  must check out the repository, v2 is part of the action name
       - name: Checkout
         uses: actions/checkout@v2
       - name: Set env
@@ -22,7 +22,7 @@ jobs:
         id: hello
         with:
           file-name: 'root://eospublic.cern.ch//eos/opendata/cms/Run2012C/SingleElectron/AOD/22Jan2013-v1/10000/00626847-9EAC-E211-ABAA-00259059642E.root'
-          CMSSW_VERSION: 'CMSSW_5_3_32'   
+          CMSSW_VERSION: 'CMSSW_4_2_8'   
       - name: Upload artifact
         uses: actions/upload-artifact@v1
         with:
