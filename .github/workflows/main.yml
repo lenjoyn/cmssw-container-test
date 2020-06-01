@@ -1,0 +1,35 @@
+on:
+ pull_request:
+   branches: 
+     - master
+jobs:
+  my_file_check:
+    runs-on: ubuntu-latest
+  #  if: github.actor == github.event.repository.owner.login
+    name: My test job
+    steps:
+      # To use this repository's private action, you must check out the repository, v2 is part of the action name
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Set env
+        run: |
+          echo "::set-env name=GITHUB_WORKSPACE::/home/cmsusr"
+          env
+      - name: Check env
+        run: env
+      - name: In the container action step
+        uses: ./ # Uses an action in the root directory
+        id: hello
+        with:
+          file-name: 'root://eospublic.cern.ch//eos/opendata/cms/Run2012C/SingleElectron/AOD/22Jan2013-v1/10000/00626847-9EAC-E211-ABAA-00259059642E.root'
+          CMSSW_VERSION: 'CMSSW_5_3_32'   
+      - name: Upload artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: output
+          path: ${{ steps.hello.outputs.another_output }}       
+      # Use the output from the `hello` step
+      - name: Get the output time
+        run: |
+          echo "The time is ${{ steps.hello.outputs.time }}"
+          echo "Log file name is ${{ steps.hello.outputs.another_output }}"
