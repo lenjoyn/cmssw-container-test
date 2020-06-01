@@ -32,4 +32,4 @@ Output file name.
 
 ## Artifacts
 
-The output of edmProvDump.
+The output of [edmDumpEventContent](https://twiki.cern.ch/twiki/bin/view/CMSPublic/WorkBookEdmInfoOnDataFile#EdmDumpEventContent).
