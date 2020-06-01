@@ -1,0 +1,25 @@
+# action.yml
+name: 'Github action test with CMSSW docker container'
+description: 'Inspect a file and return something'
+inputs:
+  file-name:  # id of input
+    description: 'File name'
+    required: true
+    default: 'root://eospublic.cern.ch//eos/opendata/cms/Run2012C/SingleElectron/AOD/22Jan2013-v1/10000/00626847-9EAC-E211-ABAA-00259059642E.root'
+  CMSSW_VERSION:  # id of input
+    description: 'CMSSW version'
+    required: true
+    default: 'CMSSW_5_3_32'
+outputs:
+  time: # id of output
+    description: 'Time'
+  another_output: # id of output
+    description: 'Another output'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.file-name }}
+    - ${{ inputs.CMSSW_VERSION }}
+  
+   
