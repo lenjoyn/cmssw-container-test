@@ -8,7 +8,7 @@ jobs:
   #  if: github.actor == github.event.repository.owner.login
     name: My test job
     steps:
-      # To use this repository's private action, you  must check out the repository, v2 is part of the action name
+      # To use this repository's private action, you must check out the repository, v2 is part of the action name
       - name: Checkout
         uses: actions/checkout@v2
       - name: Set env
@@ -21,7 +21,8 @@ jobs:
         uses: ./ # Uses an action in the root directory
         id: hello
         with:
-          file-name: 'root://eospublic.cern.ch//eos/opendata/cms/Run2012C/SingleElectron/AOD/22Jan2013-v1/10000/00626847-9EAC-E211-ABAA-00259059642E.root'
+          #file-name: 'root://eospublic.cern.ch//eos/opendata/cms/hidata/HIRun2011/HIHighPt/RECO/15Apr2013-v1/110000/10EF1D2D-77B4-E211-A652-003048F1C494.root'
+          file-name: 'root://eospublic.cern.ch//eos/opendata/cms/hidata/HIRun2010/HICorePhysics/RECO/PromptReco-v3/000/150/881/B41883EA-FFED-DF11-8A61-001617C3B6C6.root'
           CMSSW_VERSION: 'CMSSW_4_2_8'   
       - name: Upload artifact
         uses: actions/upload-artifact@v1
