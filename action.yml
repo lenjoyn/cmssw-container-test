@@ -5,20 +5,19 @@ inputs:
   file-name:  # id of input
     description: 'File name'
     required: true
-    default: 'root://eospublic.cern.ch//eos/opendata/cms/hidata/HIRun2011/HIHighPt/RECO/15Apr2013-v1/110000/10EF1D2D-77B4-E211-A652-003048F1C494.root'
+    default: 'root://eospublic.cern.ch//eos/opendata/cms/Run2012C/SingleElectron/AOD/22Jan2013-v1/10000/00626847-9EAC-E211-ABAA-00259059642E.root'
   CMSSW_VERSION:  # id of input
     description: 'CMSSW version'
     required: true
-    default: 'CMSSW_4_2_8'
+    default: 'CMSSW_5_3_32'
 outputs:
-  time: # id of output
+  time: # output time
     description: 'Time'
-  another_output: # id of output
-    description: 'Another output'
+  output-file-name: # output file
+    description: 'Output file'
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  # image: 'gitlab-registry.cern.ch/clange/cmssw-docker/cmssw_4_2_8:latest'
   args:
     - ${{ inputs.file-name }}
     - ${{ inputs.CMSSW_VERSION }}
