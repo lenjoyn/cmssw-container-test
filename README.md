@@ -8,7 +8,7 @@ Because of the default volume mount and home directory settings for the `docker 
  - change to `/home/cmsusr` before building the CMSSW release area in Entrypoint
  - change owner to `cmsusr` for `/github/worspace` so that the output file can be passed as an artifact
 
-The workflow is triggered by the owner starring the repo.
+The workflow is triggered by PR.
 
 ## Inputs
 
