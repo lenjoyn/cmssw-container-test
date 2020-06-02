@@ -10,6 +10,8 @@ Because of the default volume mount and home directory settings for the `docker 
 
 The workflow is triggered by each pull request, and the output of the workflow is visible under the "Actions" tab. The commands are passed in the container in with the commands in [entrypoint.sh](https://github.com/katilp/cmssw-container-test/blob/master/entrypoint.sh#L19).
 
+The workflow can be entirely run from the github web interface of the repository, no local download is necessary, which may be of interest if running docker locally is not possible.
+
 ## Inputs
 
 ### `file-name`
